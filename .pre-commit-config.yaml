@@ -1,0 +1,11 @@
+repos:
+  - repo: git://github.com/golangci/golangci-lint
+    rev: HEAD
+    hooks:
+      - id: golangci-lint
+        name: golangci-lint
+        description: Fast linters runner for Go.
+        entry: golangci-lint run -E gocritic,golint,bodyclose,gosec,dupl,goconst,funlen,whitespace ./...
+        types: [go]
+        language: golang
+        pass_filenames: false
